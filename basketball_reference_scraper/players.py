@@ -73,8 +73,6 @@ def get_game_logs(_name, start_date, end_date, playoffs=False, ask_matches=True)
                 df = df.loc[(df['DATE'] >= start_date) & (df['DATE'] <= end_date)]
                 active_df = pd.DataFrame(columns = list(df.columns))
                 for index, row in df.iterrows():
-                    if row['GS']!=1 and row['GS']!='1':
-                        continue
                     active_df = active_df.append(row)
                 if final_df is None:
                     final_df = pd.DataFrame(columns=list(active_df.columns))
